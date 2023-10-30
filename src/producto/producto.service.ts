@@ -4,9 +4,11 @@ import { ProductModel } from './productModel';
 @Injectable()
 export class ProductoService {
 
+  //Defino la lista de productos
   productos = [];
 
   constructor() {
+    //Le agrego 2 productos iniciales
     let prod = {
       "id": 1,
       "producto": "salsa de tomate",
@@ -25,14 +27,28 @@ export class ProductoService {
   getProducto() {
     return this.productos;
   }
-  agregarProducto(productModel: ProductModel) {
+
+  agregarProducto(modelo: ProductModel) {
     let prod = {
-      "id": productModel.id,
-      "producto": productModel.product,
-      "precio": productModel.price
+      "id": modelo.id,
+      "producto": modelo.product,
+      "precio": modelo.price
     }
+    //Agrego el producto a la lista
     this.productos.push(prod);
     return "Producto agregado exitosamente";
+  }
+
+  modificarProducto(id: string, modelo: ProductModel) {
+    //Aca modifico el producto.
+    //Hay que completar la funcionalidad
+    return "Producto modificado correctamente"
+  }
+
+  eliminarProducto(id: string) {
+    //aca debo eliminar el producto.
+    //Hay que completar la funcionalidad
+    return "Producto eliminado correctamente"
   }
 
 }
