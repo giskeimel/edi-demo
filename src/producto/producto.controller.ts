@@ -32,7 +32,7 @@ constructor(private readonly servicio: ProductoService) {}
     //}
 
     //El PUT es para modificar objetos.
-    //Como modifico uno solo, le paso el id en la ruta /productos/id
+    //Como modifico uno solo, le paso el id en la ruta /productos/<id>
     //y le paso el body con la nueva informacion.
     @Put(':id')
     modificarProducto(@Body() modelo: ProductModel, @Param('id') id: string){
@@ -40,7 +40,8 @@ constructor(private readonly servicio: ProductoService) {}
     }
 
     //El DELETE es para eliminar objetos
-    // Como elimino uno solo, le paso el id en la ruta /productos/id
+    // Como elimino uno solo, le paso el id en la ruta /productos/<id>
+    //los ':' indican que es una variable que le vamos a pasar en la ruta
     @Delete(':id')
     eliminarProducto(@Param('id') id: string) {
         return this.servicio.eliminarProducto(id);

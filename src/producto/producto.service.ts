@@ -48,6 +48,9 @@ export class ProductoService {
   eliminarProducto(id: string) {
     //aca debo eliminar el producto.
     //Hay que completar la funcionalidad
+    //recorro el arreglo de productos
+    //si el producto es el que tengo que eliminar
+    //lo elimino.
     return "Producto eliminado correctamente"
   }
 
